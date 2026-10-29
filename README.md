@@ -45,4 +45,28 @@ This project asks: **do the core clock genes show 24-hour mRNA rhythms in mouse 
 - The two cryptochromes behave differently: *Cry1* has a strong rhythm (7.5-fold) peaking late in the subjective night, whereas *Cry2* has a weak rhythm (1.4-fold, R² = 0.21) peaking in the subjective day. The delayed phase of *Cry1* is a known feature of the mammalian clock.
 - *Bmal1* shows the largest rhythm (~36-fold peak-to-trough).
 - *Per1* is significantly rhythmic but fitted less well (R² = 0.40), because its sharp peaks are not well described by a single smooth cosine.
-  Emre Sezen, BSc Biochemistry, University College London.
+## Limitations
+
+- **mRNA, not protein:** microarrays measure mRNA abundance. Protein rhythms can lag behind mRNA by several hours or differ entirely, because of translation and protein degradation (e.g. CRY stability).
+- **Fixed 24-hour period:** cosinor estimates amplitude and peak time but not the period. The free-running period in constant darkness may differ slightly from 24 h.
+- **Single sinusoid:** genes with sharp or non-sinusoidal peaks (e.g. *Per1*, *Nr1d1*) are fitted less well, and 12-hour or 8-hour rhythms (reported for some liver genes by Hughes et al.) are not captured.
+- **Pooled samples, no replicates:** each time point is one array of pooled RNA from different mice, so between-animal variability can't be estimated directly, and the F-test assumes independent errors between time points.
+- **Feeding as a confounder:** mice still eat rhythmically in constant darkness, so some liver rhythms may be driven by feeding rather than the liver's own clock.
+- **Annotation:** probe-to-gene mapping uses a 2016 annotation, and probeset choice may affect amplitude estimates.
+- **Scope:** only six core clock genes were analysed.
+
+## How to reproduce
+
+Open the notebook in Google Colab and select **Runtime → Run all**. All data are downloaded automatically from GEO.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sezemr/circadian-rhythm-detection/blob/main/01_setup_and_data.ipynb)
+
+**Software:** Python in Google Colab, with pandas 2.2.3, NumPy 2.1.3, SciPy 1.16.3 and matplotlib 3.10.0.
+
+## Reference
+
+Hughes ME, DiTacchio L, Hayes KR, Vollmers C, Pulivarthy S, Baggs JE, Panda S, Hogenesch JB (2009). Harmonics of circadian gene transcription in mammals. *PLoS Genetics* 5(4): e1000442. https://doi.org/10.1371/journal.pgen.1000442
+
+## Author
+
+Emre Sezen, BSc Biochemistry, University College London..

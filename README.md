@@ -45,6 +45,7 @@ This project asks: **do the core clock genes show 24-hour mRNA rhythms in mouse 
 - The two cryptochromes behave differently: *Cry1* has a strong rhythm (7.5-fold) peaking late in the subjective night, whereas *Cry2* has a weak rhythm (1.4-fold, R² = 0.21) peaking in the subjective day. The delayed phase of *Cry1* is a known feature of the mammalian clock.
 - *Bmal1* shows the largest rhythm (~36-fold peak-to-trough).
 - *Per1* is significantly rhythmic but fitted less well (R² = 0.40), because its sharp peaks are not well described by a single smooth cosine.
+  
 ## Limitations
 
 - **mRNA, not protein:** microarrays measure mRNA abundance. Protein rhythms can lag behind mRNA by several hours or differ entirely, because of translation and protein degradation (e.g. CRY stability).
@@ -69,4 +70,4 @@ Hughes ME, DiTacchio L, Hayes KR, Vollmers C, Pulivarthy S, Baggs JE, Panda S, H
 
 ## Author
 
-Emre Sezen, BSc Biochemistry, University College London..
+Emre Sezen, BSc Biochemistry, University College London.

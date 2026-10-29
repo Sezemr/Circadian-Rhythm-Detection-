@@ -27,38 +27,22 @@ This project asks: **do the core clock genes show 24-hour mRNA rhythms in mouse 
 
 ## Results
 
-[Paste the table printed by code cell D here]
+| Gene | Peak (CT) | Amplitude (log2) | Peak-to-trough fold change | R² | q-value (BH) |
+|:-----|----------:|-----------------:|---------------------------:|---:|-------------:|
+| *Nr1d1* | 6.5 | 2.08 | 17.8 | 0.81 | 1.2e-16 |
+| *Cry2* | 10.0 | 0.26 | 1.4 | 0.21 | 5.0e-03 |
+| *Per1* | 11.3 | 0.44 | 1.9 | 0.40 | 1.4e-05 |
+| *Per2* | 14.0 | 1.64 | 9.7 | 0.83 | 1.0e-17 |
+| *Cry1* | 19.8 | 1.45 | 7.5 | 0.88 | 4.9e-21 |
+| *Bmal1* (*Arntl*) | 22.3 | 2.58 | 35.6 | 0.87 | 1.9e-20 |
 
 **Key findings:**
 
-- [All six / Five of six] core clock genes showed significant 24-hour rhythms (q < 0.05) in constant darkness, indicating that the rhythms are generated internally rather than driven by light.
-- The genes peak in a **sequence** across the cycle rather than in two opposing groups: *Nr1d1* (REV-ERBα) peaks earliest (CT[ ]), followed by [ ], and *Bmal1* (*Arntl*) latest (CT[ ]).
-- Each rise in *Nr1d1* precedes the fall in *Bmal1* by a few hours, consistent with REV-ERBα repressing *Bmal1* transcription.
-- The two cryptochromes behave differently: *Cry1* has a strong rhythm ([ ]-fold) peaking late in the subjective night (CT[ ]), whereas *Cry2* has a much weaker rhythm ([ ]-fold) peaking in the subjective day (CT[ ]). The delayed phase of *Cry1* is a known feature of the mammalian clock.
-- *Bmal1* shows the largest rhythm ([ ]-fold peak-to-trough).
-
-## Limitations
-
-- **mRNA, not protein:** microarrays measure mRNA abundance. Protein rhythms can lag behind mRNA by several hours or differ entirely, because of translation and protein degradation (e.g. CRY stability).
-- **Fixed 24-hour period:** cosinor estimates amplitude and peak time but not the period. The free-running period in constant darkness may differ slightly from 24 h.
-- **Single sinusoid:** genes with sharp or non-sinusoidal peaks (e.g. *Per1*) are fitted less well (lower R²), and 12-hour or 8-hour rhythms (reported for some liver genes by Hughes et al.) are not captured.
-- **Pooled samples, no replicates:** each time point is one array of pooled RNA from different mice, so between-animal variability can't be estimated directly, and the F-test assumes independent errors between time points.
-- **Feeding as a confounder:** mice still eat rhythmically in constant darkness, so some liver rhythms may be driven by feeding rather than the liver's own clock.
-- **Annotation:** probe-to-gene mapping uses a 2016 annotation, and probeset choice may affect amplitude estimates.
-- **Scope:** only six core clock genes were analysed.
-
-## How to reproduce
-
-Open the notebook in Google Colab and select **Runtime → Run all**. All data are downloaded automatically from GEO.
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sezemr/circadian-rhythm-detection/blob/main/01_setup_and_data.ipynb)
-
-**Software:** Python in Google Colab, with pandas 2.2.3, NumPy 2.1.3, SciPy 1.16.3 and matplotlib 3.10.0.
-
-## Reference
-
-Hughes ME, DiTacchio L, Hayes KR, Vollmers C, Pulivarthy S, Baggs JE, Panda S, Hogenesch JB (2009). Harmonics of circadian gene transcription in mammals. *PLoS Genetics* 5(4): e1000442. https://doi.org/10.1371/journal.pgen.1000442
-
-## Author
-
-[Your full name], BSc Biochemistry, University College London.
+- All six core clock genes showed significant 24-hour rhythms (q < 0.05) in constant darkness, indicating that the rhythms are generated internally rather than driven by light.
+- The genes peak in a **sequence** across the cycle rather than in two opposing groups: *Nr1d1* (REV-ERBα) peaks earliest (CT6.5), followed by *Cry2* (CT10.0), *Per1* (CT11.3) and *Per2* (CT14.0), with *Cry1* (CT19.8) and *Bmal1* (CT22.3) peaking late in the subjective night.
+- *Bmal1* reaches its trough at about CT10, roughly 4 hours after the *Nr1d1* peak, consistent with REV-ERBα repressing *Bmal1* transcription.
+- *Bmal1* and *Per2* peak about 8 hours apart rather than in exact antiphase, reflecting their regulation through different promoter elements (RORE vs E-box).
+- The two cryptochromes behave differently: *Cry1* has a strong rhythm (7.5-fold) peaking late in the subjective night, whereas *Cry2* has a weak rhythm (1.4-fold, R² = 0.21) peaking in the subjective day. The delayed phase of *Cry1* is a known feature of the mammalian clock.
+- *Bmal1* shows the largest rhythm (~36-fold peak-to-trough).
+- *Per1* is significantly rhythmic but fitted less well (R² = 0.40), because its sharp peaks are not well described by a single smooth cosine.
+  Emre Sezen, BSc Biochemistry, University College London.
